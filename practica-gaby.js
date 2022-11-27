@@ -13,13 +13,13 @@ const availableGenders = ['male', 'female'];
 const students = [{
     age: 32,
     examScores: [],
-    gender: 'male',
+    gender: 'female',
     name: 'edu'
 },
 {
     age: 23,
     examScores: [2,3,4],
-    gender: 'female',
+    gender: 'male',
     name: 'silvia'
 },
 {
@@ -105,17 +105,26 @@ function MostrarEstadisticasSexo(listado){
 }
 //8 Mostrar True o false si todos los alumnos de la clase son chicas
 function TodosChicas(listado){
-    let all_chicas = true
+    /*ya tengo una funcion que me filtra la cantidad de chicas del array, la length de este array del filter
+    es el numero de chicas, si este es igual a la longitud del listado completo, perfecto, todas son chicas, sino pues todas no lo son...*/
+
+
+    const num_chicas = MostrarChicas(listado)
+    if(num_chicas.length===listado.length){
+        return true;}
+    else{return false;}
+
+     //otra forma
+    /*let all_chicas = true
     let index = 0
     listado.forEach(element => {
         if (element.gender==='female'){
             all_chicas = all_chicas && true
         }
         else{ all_chicas = false}
-
-        
-    })
-    return(all_chicas)}
+})
+    return(all_chicas)*/
+}
 
 //9 Entre 20 y 25
 function Between2025(listado){
